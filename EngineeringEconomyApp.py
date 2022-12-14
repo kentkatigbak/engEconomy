@@ -1,29 +1,24 @@
 import streamlit as st
 
-col1, col2 = st.columns([2,4])
-
-with col1:
-    st.image("logo_kent.png")
-
-with col2:
-    st.markdown("""
-                <h1 class = title1>
-                    Kent Jym B. Katigbak
-                </h1>
-                <h4 class = subtitle1>
-                    Industrial Engineer, CLSSYB, SO2, PMFC, CIFC, DSFC, Data Analyst, Python Programmer
-                </h4>
-                <style>
-                    .title1 {
-                    padding-bottom: 0rem;
-                }
-                    .subtitle1 {
-                    padding-top: 1rem;
-                    padding-right: 1rem;
-                    padding-bottom: 3.5rem;
-                }
-        </style>
-        """, unsafe_allow_html=True)
+st.sidebar.image('logo_kent.png')
+st.sidebar.markdown("""
+            <h1 class = title1>
+                Kent Jym B. Katigbak
+            </h1>
+            <h3 class = subtitle1>
+            Industrial Engineer, CLSSYB, SO2, PMFC, CIFC, DSFC, Data Analyst, Python Programmer
+            </h3>
+            <style>
+                .title1 {
+                padding-bottom: 0rem;
+            }
+                .subtitle1 {
+                padding-top: 0rem;
+                padding-right: 0rem;
+                padding-bottom: 3.5rem;
+            }
+    </style>
+    """, unsafe_allow_html=True)
 
 st.title("Engineering Economy Web App")
 
@@ -44,10 +39,10 @@ if app_menu == "Simple Interest":
     st.write("Simple Interest = Principal x Rate x Time / 100")
 
     # create sidebar for input options
-    st.sidebar.subheader("Input necessary values")
-    principal = st.sidebar.number_input("Principal")
-    rate = st.sidebar.number_input("Rate (%)")
-    time = st.sidebar.number_input("Time (years)")
+    st.subheader("Input necessary values")
+    principal = st.number_input("Principal")
+    rate = st.number_input("Rate (%)")
+    time = st.number_input("Time (years)")
 
     # calculate and display simple interest
     simple_interest = principal * rate * time / 100
@@ -62,10 +57,10 @@ if app_menu == "Compound Interest":
     st.write("Compound Interest = Principal x (1 + Rate / 100)^Time")
 
     # create sidebar for input options
-    st.sidebar.subheader("Input necessary values")
-    principal = st.sidebar.number_input("Principal")
-    rate = st.sidebar.number_input("Rate (%)")
-    time = st.sidebar.number_input("Time (years)")
+    st.subheader("Input necessary values")
+    principal = st.number_input("Principal")
+    rate = st.number_input("Rate (%)")
+    time = st.number_input("Time (years)")
 
     # calculate and display compound interest
     compound_interest = principal * (1 + rate / 100)**time
@@ -82,9 +77,9 @@ if app_menu == "Annuity":
     st.write("Annuity = Payment / Interest Rate")
 
     # create sidebar for input options
-    st.sidebar.subheader("Input necessary values")
-    payment = st.sidebar.number_input("Payment")
-    rate = st.sidebar.number_input("Interest Rate (%)")
+    st.subheader("Input necessary values")
+    payment = st.number_input("Payment")
+    rate = st.number_input("Interest Rate (%)")
 
     # calculate and display annuity
     def func(x):
@@ -101,10 +96,10 @@ if app_menu == "Capitalized Cost":
     st.write("Capitalized Cost = Purchase Price + Installation Costs + Other Expenses")
 
     # create sidebar for input options
-    st.sidebar.subheader("Input necessary values")
-    purchase_price = st.sidebar.number_input("Purchase Price")
-    installation_costs = st.sidebar.number_input("Installation Costs")
-    other_expenses = st.sidebar.number_input("Other Expenses")
+    st.subheader("Input necessary values")
+    purchase_price = st.number_input("Purchase Price")
+    installation_costs = st.number_input("Installation Costs")
+    other_expenses = st.number_input("Other Expenses")
 
     # calculate and display capitalized cost
     capitalized_cost = purchase_price + installation_costs + other_expenses
@@ -119,9 +114,9 @@ if app_menu == "Annual Cost":
     st.write("Annual Cost = Capitalized Cost / Useful Life")
 
     # create sidebar for input options
-    st.sidebar.subheader("Input necessary values")
-    capitalized_cost = st.sidebar.number_input("Capitalized Cost")
-    useful_life = st.sidebar.number_input("Useful Life (years)")
+    st.subheader("Input necessary values")
+    capitalized_cost = st.number_input("Capitalized Cost")
+    useful_life = st.number_input("Useful Life (years)")
 
     # calculate and display annual cost
     annual_cost = capitalized_cost / useful_life
@@ -136,10 +131,10 @@ if app_menu == "Depreciation":
     st.write("Depreciation = (Capitalized Cost - Salvage Value) / Useful Life")
 
     # create sidebar for input options
-    st.sidebar.subheader("Input necessary values")
-    capitalized_cost = st.sidebar.number_input("Capitalized Cost")
-    salvage_value = st.sidebar.number_input("Salvage Value")
-    useful_life = st.sidebar.number_input("Useful Life (years)")
+    st.subheader("Input necessary values")
+    capitalized_cost = st.number_input("Capitalized Cost")
+    salvage_value = st.number_input("Salvage Value")
+    useful_life = st.number_input("Useful Life (years)")
 
     # calculate and display depreciation
     depreciation = (capitalized_cost - salvage_value) / useful_life
@@ -154,10 +149,10 @@ if app_menu == "Depletion":
     st.write("Depletion = (Original Quantity - Remaining Quantity) / Total Production")
 
     # create sidebar for input options
-    st.sidebar.subheader("Input necessary values")
-    original_quantity = st.sidebar.number_input("Original Quantity")
-    remaining_quantity = st.sidebar.number_input("Remaining Quantity")
-    total_production = st.sidebar.number_input("Total Production")
+    st.subheader("Input necessary values")
+    original_quantity = st.number_input("Original Quantity")
+    remaining_quantity = st.number_input("Remaining Quantity")
+    total_production = st.number_input("Total Production")
 
     # calculate and display depletion
     depletion = (original_quantity - remaining_quantity) / total_production
@@ -172,9 +167,9 @@ if app_menu == "Capital Recovery":
     st.write("Capital Recovery = Investment / Annual Return")
 
     # create sidebar for input options
-    st.sidebar.subheader("Input necessary values")
-    investment = st.sidebar.number_input("Investment")
-    annual_return = st.sidebar.number_input("Annual Return")
+    st.subheader("Input necessary values")
+    investment = st.number_input("Investment")
+    annual_return = st.number_input("Annual Return")
 
     # calculate and display capital recovery
     capital_recovery = investment / annual_return
@@ -189,9 +184,9 @@ if app_menu == "Property Valuation or Appraisal":
     st.write("Property Valuation = Market Value of Comparable Properties / Number of Comparable Properties")
 
     # create sidebar for input options
-    st.sidebar.subheader("Input necessary values")
-    market_value = st.sidebar.number_input("Market Value of Comparable Properties")
-    number_of_properties = st.sidebar.number_input("Number of Comparable Properties")
+    st.subheader("Input necessary values")
+    market_value = st.number_input("Market Value of Comparable Properties")
+    number_of_properties = st.number_input("Number of Comparable Properties")
 
     # calculate and display property valuation or appraisal
     property_valuation = market_value / number_of_properties
@@ -205,10 +200,10 @@ if app_menu == "Principles of Accounting":
     st.write("Accounting is the process of recording, classifying, and summarizing financial transactions to provide information that is useful in making business decisions. The principles of accounting are the fundamental assumptions and guidelines that underlie the preparation of financial statements.")
 
     # create sidebar for input options
-    st.sidebar.subheader("Input necessary values")
-    revenue = st.sidebar.number_input("Revenue")
-    cost_of_goods_sold = st.sidebar.number_input("Cost of Goods Sold")
-    expenses = st.sidebar.number_input("Expenses")
+    st.subheader("Input necessary values")
+    revenue = st.number_input("Revenue")
+    cost_of_goods_sold = st.number_input("Cost of Goods Sold")
+    expenses = st.number_input("Expenses")
 
     # calculate and display net income using the matching principle
     net_income = revenue - cost_of_goods_sold - expenses
@@ -222,10 +217,10 @@ if app_menu == "Cost Accounting":
     st.write("Cost accounting is the process of recording, classifying, and summarizing costs to provide information that is useful in making business decisions. The principles of cost accounting are the fundamental assumptions and guidelines that underlie the preparation of cost statements.")
 
     # create sidebar for input options
-    st.sidebar.subheader("Input necessary values")
-    direct_materials = st.sidebar.number_input("Direct Materials")
-    direct_labor = st.sidebar.number_input("Direct Labor")
-    factory_overhead = st.sidebar.number_input("Factory Overhead")
+    st.subheader("Input necessary values")
+    direct_materials = st.number_input("Direct Materials")
+    direct_labor = st.number_input("Direct Labor")
+    factory_overhead = st.number_input("Factory Overhead")
 
     # calculate and display prime cost
     prime_cost = direct_materials + direct_labor
@@ -244,10 +239,10 @@ if app_menu == "Break-Even Analysis":
     st.write("Break Even Point = Fixed Costs / (Price - Variable Costs)")
 
     # create sidebar for input options
-    st.sidebar.subheader("Input necessary values")
-    fixed_costs = st.sidebar.number_input("Fixed Costs")
-    price = st.sidebar.number_input("Price")
-    variable_costs = st.sidebar.number_input("Variable Costs")
+    st.subheader("Input necessary values")
+    fixed_costs = st.number_input("Fixed Costs")
+    price = st.number_input("Price")
+    variable_costs = st.number_input("Variable Costs")
 
     # calculate and display break even point
     break_even_point = fixed_costs / (price - variable_costs)
@@ -262,9 +257,9 @@ if app_menu == "Minimum Cost Analysis":
     st.write("Minimum Cost = Minimum Total Variable Costs + Minimum Fixed Costs")
 
     # create sidebar for input options
-    st.sidebar.subheader("Input necessary values")
-    minimum_total_variable_costs = st.sidebar.number_input("Minimum Total Variable Costs")
-    minimum_fixed_costs = st.sidebar.number_input("Minimum Fixed Costs")
+    st.subheader("Input necessary values")
+    minimum_total_variable_costs = st.number_input("Minimum Total Variable Costs")
+    minimum_fixed_costs = st.number_input("Minimum Fixed Costs")
 
     # calculate and display minimum cost
     minimum_cost = minimum_total_variable_costs + minimum_fixed_costs
@@ -280,9 +275,9 @@ if app_menu == "Public Economy":
     st.write("- The principle of equity: ensuring that the benefits and costs of economic activity are distributed fairly among individuals and groups in society")
 
     # create sidebar for input options
-    st.sidebar.subheader("Input necessary values")
-    total_revenue = st.sidebar.number_input("Total Revenue")
-    total_expenditure = st.sidebar.number_input("Total Expenditure")
+    st.subheader("Input necessary values")
+    total_revenue = st.number_input("Total Revenue")
+    total_expenditure = st.number_input("Total Expenditure")
 
     # calculate and display net fiscal position
     net_fiscal_position = total_revenue - total_expenditure
@@ -301,9 +296,9 @@ if app_menu == "Inflation":
     st.write("Inflation = (Price in Current Period - Price in Previous Period) / Price in Previous Period")
 
     # create sidebar for input options
-    st.sidebar.subheader("Input necessary values")
-    price_current_period = st.sidebar.number_input("Price in Current Period")
-    price_previous_period = st.sidebar.number_input("Price in Previous Period")
+    st.subheader("Input necessary values")
+    price_current_period = st.number_input("Price in Current Period")
+    price_previous_period = st.number_input("Price in Previous Period")
 
     # calculate and display inflation
     inflation = (price_current_period - price_previous_period) / price_previous_period
@@ -318,9 +313,9 @@ if app_menu == "Deflation":
     st.write("Deflation = (Price in Previous Period - Price in Current Period) / Price in Previous Period")
 
     # create sidebar for input options
-    st.sidebar.subheader("Input necessary values")
-    price_current_period = st.sidebar.number_input("Price in Current Period")
-    price_previous_period = st.sidebar.number_input("Price in Previous Period")
+    st.subheader("Input necessary values")
+    price_current_period = st.number_input("Price in Current Period")
+    price_previous_period = st.number_input("Price in Previous Period")
 
     # calculate and display deflation
     deflation = (price_previous_period - price_current_period) / price_previous_period
@@ -336,10 +331,10 @@ if app_menu == "Risk and Uncertainty":
     st.write("- The principle of expected value: using probabilities to calculate the average outcome of a risky decision")
 
     # create sidebar for input options
-    st.sidebar.subheader("Input necessary values")
-    probability = st.sidebar.number_input("Probability")
-    outcome1 = st.sidebar.number_input("Outcome 1")
-    outcome2 = st.sidebar.number_input("Outcome 2")
+    st.subheader("Input necessary values")
+    probability = st.number_input("Probability")
+    outcome1 = st.number_input("Outcome 1")
+    outcome2 = st.number_input("Outcome 2")
 
     # calculate and display expected value
     expected_value = probability * outcome1 + (1 - probability) * outcome2
