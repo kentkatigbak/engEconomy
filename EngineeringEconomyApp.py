@@ -3,7 +3,7 @@ import streamlit as st
 st.sidebar.image('logo_kent.png')
 st.sidebar.markdown("""
             <h1 class = title1>
-                Kent Jym B. Katigbak
+                Kent Katigbak
             </h1>
             <h3 class = subtitle1>
             Industrial Engineer, CLSSYB, SO2, PMFC, CIFC, DSFC, Data Analyst, Python Programmer
