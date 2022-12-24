@@ -1,4 +1,12 @@
 import streamlit as st
+hide_menu = """
+<style>
+#MainMenu{
+    Visibility:hidden;
+}
+</style>
+"""
+st.markdown(hide_menu, unsafe_allow_html=True)
 
 st.sidebar.image('logo_kent.png')
 st.sidebar.markdown("""
