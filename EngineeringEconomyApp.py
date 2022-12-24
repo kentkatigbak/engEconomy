@@ -1,4 +1,5 @@
 import streamlit as st
+
 hide_menu = """
 <style>
 #MainMenu{
@@ -7,6 +8,24 @@ hide_menu = """
 </style>
 """
 st.markdown(hide_menu, unsafe_allow_html=True)
+
+hide_share = """
+<style>
+#Share{
+    Visibility:hidden;
+}
+</style>
+"""
+st.markdown(hide_share, unsafe_allow_html=True)
+
+hide_star = """
+<style>
+#stActionButton{
+    Visibility:hidden;
+}
+</style>
+"""
+st.markdown(hide_star, unsafe_allow_html=True)
 
 st.sidebar.image('logo_kent.png')
 st.sidebar.markdown("""
